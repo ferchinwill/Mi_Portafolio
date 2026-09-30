@@ -1,0 +1,11 @@
+# Carpeta de Videos Reels
+
+Coloca aquí tus videos de reels en formato `.mp4` (o `.webm`).
+
+Ejemplos recomendados:
+- `reel_orion.mp4`
+- `reel_colegio.mp4`
+- `reel_promo.mp4`
+
+Luego en `src/components/Portfolio.tsx` puedes referenciarlos con:
+`videoUrl: '/reels/reel_orion.mp4'`

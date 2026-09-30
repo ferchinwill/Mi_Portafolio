@@ -1,0 +1,16 @@
+=== CARPETA PARA IMÁGENES DE TUS PROYECTOS ===
+
+Aquí puedes guardar las capturas de pantalla de tus proyectos para que se vean automáticamente en tu portafolio.
+
+Nombres recomendados:
+- crm-colegio.png         -> Para el proyecto CRM Colegio
+- sites-and-towers.png    -> Para la app móvil Sites & Towers v2
+- crm-cotizaciones.png    -> Para CRM Cotizaciones
+- pctech-platform.png     -> Para PcTechDreams Platform
+- bootstrap-ui.png        -> Para la librería de componentes Bootstrap
+
+Formatos soportados: .png, .jpg, .webp, .svg
+
+Una vez que guardes tu captura aquí (por ejemplo: /public/proyectos/crm-colegio.png),
+solo colocas en `Portfolio.tsx` la propiedad:
+image: '/proyectos/crm-colegio.png'
