@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { getAssetUrl } from '../utils/assetPath';
 import {
   Award,
   GraduationCap,
@@ -578,7 +579,7 @@ export const About: React.FC = () => {
                       onClick={() => setSelectedCert({
                         title: 'Carta de Pasante',
                         subtitle: 'Ingeniería en Sistemas Computacionales • Universidad Autónoma de Tamaulipas',
-                        url: '/certificados/preview-carta-pasante.jpg',
+                        url: getAssetUrl('/certificados/preview-carta-pasante.jpg'),
                         type: 'image'
                       })}
                       title="Clic para ver Carta de Pasante ampliada"
@@ -586,7 +587,7 @@ export const About: React.FC = () => {
                       tabIndex={0}
                     >
                       <img
-                        src="/certificados/preview-carta-pasante.jpg"
+                        src={getAssetUrl('/certificados/preview-carta-pasante.jpg')}
                         alt="Vista previa Carta de Pasante UAT"
                         className="edu-cert-thumb"
                       />
@@ -626,7 +627,7 @@ export const About: React.FC = () => {
                       onClick={() => setSelectedCert({
                         title: 'Certificado de Posgrado: Meta Marketing',
                         subtitle: 'Estrategias Digitales & Rendimiento Digital',
-                        url: '/certificados/certificado-meta-marketing.jpg',
+                        url: getAssetUrl('/certificados/certificado-meta-marketing.jpg'),
                         type: 'image'
                       })}
                       title="Clic para ver Certificado ampliado"
@@ -634,7 +635,7 @@ export const About: React.FC = () => {
                       tabIndex={0}
                     >
                       <img
-                        src="/certificados/certificado-meta-marketing.jpg"
+                        src={getAssetUrl('/certificados/certificado-meta-marketing.jpg')}
                         alt="Vista previa Certificado Meta Marketing"
                         className="edu-cert-thumb"
                       />
@@ -671,7 +672,7 @@ export const About: React.FC = () => {
                       onClick={() => setSelectedCert({
                         title: 'Certificado VI Coloquio de Investigación',
                         subtitle: 'Participación y Presentación en Coloquio Académico',
-                        url: '/certificados/preview-certificado-coloquio.jpg',
+                        url: getAssetUrl('/certificados/preview-certificado-coloquio.jpg'),
                         type: 'image'
                       })}
                       title="Clic para ver Certificado del Coloquio ampliado"
@@ -679,7 +680,7 @@ export const About: React.FC = () => {
                       tabIndex={0}
                     >
                       <img
-                        src="/certificados/preview-certificado-coloquio.jpg"
+                        src={getAssetUrl('/certificados/preview-certificado-coloquio.jpg')}
                         alt="Vista previa Certificado VI Coloquio"
                         className="edu-cert-thumb"
                       />

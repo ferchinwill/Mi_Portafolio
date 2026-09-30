@@ -1,5 +1,6 @@
 import React from 'react';
 import { Download, MapPin, Calendar } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetPath';
 
 // Icono SVG de GitHub
 const GithubIcon: React.FC<{ size?: number }> = ({ size = 20 }) => (
@@ -76,7 +77,7 @@ export const Hero: React.FC = () => {
             {/* Fila de Botones: Descargar CV, GitHub y LinkedIn */}
             <div className="hero-marco-actions">
               <a
-                href="/CV_Fernando_Moreno_Wilches.pdf"
+                href={getAssetUrl('/CV_Fernando_Moreno_Wilches.pdf')}
                 download="CV_Fernando_Moreno_Wilches.pdf"
                 className="btn-marco-cv"
                 title="Descargar Curriculum Vitae en formato PDF"
@@ -114,7 +115,7 @@ export const Hero: React.FC = () => {
             <div className="blob-photo-container">
               <div className="blob-photo-frame">
                 <img
-                  src="/foto-fernando.jpg"
+                  src={getAssetUrl('/foto-fernando.jpg')}
                   alt="Fernando Moreno Wilches"
                   className="blob-photo-img"
                 />

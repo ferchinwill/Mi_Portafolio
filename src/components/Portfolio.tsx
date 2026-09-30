@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { TechIcon, type TechKey } from './TechIcons';
 import { ProjectDemoModal, type ShowcaseProject } from './ProjectDemoModal';
+import { getAssetUrl } from '../utils/assetPath';
 
 interface ReelItem {
   id: number | string;
@@ -218,7 +219,7 @@ export const Portfolio: React.FC = () => {
   };
 
   // Proyectos reales de GitHub (Fernando Wilches - @ferchinwill)
-  const projects: ShowcaseProject[] = [
+  const rawProjects: ShowcaseProject[] = [
     {
       id: 1,
       title: 'CRM Colegio',
@@ -578,7 +579,7 @@ export const Portfolio: React.FC = () => {
   ];
 
   // Proyectos y Piezas de Diseños & Marketing (Identidad, UI/UX, Banners y Certificados)
-  const designItems: DesignItem[] = [
+  const rawDesignItems: DesignItem[] = [
     {
       id: 1,
       title: 'Branding & Social Media Kit Para Extintores Orion',
@@ -674,7 +675,7 @@ export const Portfolio: React.FC = () => {
   ];
 
   // Contenido Audiovisual / Reels en Formato Vertical 9:16
-  const reels: ReelItem[] = [
+  const rawReels: ReelItem[] = [
     {
       id: 1,
       title: 'Extintores Orión - Reel 1',
@@ -724,6 +725,29 @@ export const Portfolio: React.FC = () => {
       videoUrl: '/reels/Reel Colegio 2.mp4',
     },
   ];
+
+  const projects: ShowcaseProject[] = rawProjects.map((p) => ({
+    ...p,
+    image: p.image ? getAssetUrl(p.image) : undefined,
+    screenshots: p.screenshots?.map((s) => ({
+      ...s,
+      src: getAssetUrl(s.src),
+    })),
+  }));
+
+  const designItems: DesignItem[] = rawDesignItems.map((d) => ({
+    ...d,
+    images: d.images.map((img) => ({
+      ...img,
+      src: getAssetUrl(img.src),
+    })),
+  }));
+
+  const reels: ReelItem[] = rawReels.map((r) => ({
+    ...r,
+    videoUrl: r.videoUrl ? getAssetUrl(r.videoUrl) : undefined,
+    thumbnailUrl: r.thumbnailUrl ? getAssetUrl(r.thumbnailUrl) : undefined,
+  }));
 
   return (
     <section id="portafolio" style={{ padding: '6rem 0 7rem', position: 'relative' }}>

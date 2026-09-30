@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, ArrowUpRight, Download } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetPath';
 
 export const Header: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -62,7 +63,7 @@ export const Header: React.FC = () => {
           </button>
 
           <a
-            href="/CV_Fernando_Moreno_Wilches.pdf"
+            href={getAssetUrl('/CV_Fernando_Moreno_Wilches.pdf')}
             download="CV_Fernando_Moreno_Wilches.pdf"
             className="btn btn-secondary"
             style={{ padding: '0.5rem 0.85rem', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
@@ -114,7 +115,7 @@ export const Header: React.FC = () => {
             </a>
           ))}
           <a
-            href="/CV_Fernando_Moreno_Wilches.pdf"
+            href={getAssetUrl('/CV_Fernando_Moreno_Wilches.pdf')}
             download="CV_Fernando_Moreno_Wilches.pdf"
             onClick={() => setIsMenuOpen(false)}
             className="btn btn-secondary"

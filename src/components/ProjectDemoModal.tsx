@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { getAssetUrl } from '../utils/assetPath';
 import {
   X,
   Maximize2,
@@ -98,7 +99,8 @@ export const ProjectDemoModal: React.FC<ProjectDemoModalProps> = ({ project, onC
       : [];
 
   const currentScreenshot = screenshots[activeScreenshotIdx] || null;
-  const activeDisplayImg = currentScreenshot ? currentScreenshot.src : project?.image || '';
+  const rawDisplayImg = currentScreenshot ? currentScreenshot.src : project?.image || '';
+  const activeDisplayImg = getAssetUrl(rawDisplayImg);
 
   const nextScreenshot = useCallback(() => {
     if (screenshots.length === 0) return;
@@ -360,7 +362,7 @@ export const ProjectDemoModal: React.FC<ProjectDemoModalProps> = ({ project, onC
                     onClick={() => setActiveScreenshotIdx(idx)}
                     title={s.name}
                   >
-                    <img src={s.src} alt={s.name} className="clean-thumb-img" />
+                    <img src={getAssetUrl(s.src)} alt={s.name} className="clean-thumb-img" />
                     <span className="clean-thumb-label">{s.name}</span>
                   </button>
                 );

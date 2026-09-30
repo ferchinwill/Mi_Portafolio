@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Check, ExternalLink, Download, MessageSquare } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetPath';
 
 const WhatsAppIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = '' }) => (
   <svg
@@ -391,7 +392,7 @@ export const Contact: React.FC = () => {
               {/* Botón de Descargar CV */}
               <div className="details-cv-row">
                 <a
-                  href="/CV_Fernando_Moreno_Wilches.pdf"
+                  href={getAssetUrl('/CV_Fernando_Moreno_Wilches.pdf')}
                   download="CV_Fernando_Moreno_Wilches.pdf"
                   className="details-cv-btn"
                 >

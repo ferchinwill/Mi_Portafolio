@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Mail, Download } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetPath';
 
 const WhatsAppIcon: React.FC<{ size?: number }> = ({ size = 15 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -67,7 +68,7 @@ export const Footer: React.FC = () => {
           </a>
 
           <a
-            href="/CV_Fernando_Moreno_Wilches.pdf"
+            href={getAssetUrl('/CV_Fernando_Moreno_Wilches.pdf')}
             download="CV_Fernando_Moreno_Wilches.pdf"
             className="footer-link-pill cv"
             title="Descargar CV en PDF"
